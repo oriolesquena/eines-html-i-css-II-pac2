@@ -1,130 +1,183 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    margin: 0;
-    padding: 2rem;
-    font-family: $font-family-sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    color: $primary-color;
-    background-color: $secondary-dark;
+  height: 100%;
+  margin: 0;
+  padding: 2rem;
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-color;
+  background-color: $secondary-dark;
 }
 
 .list-inline-item {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .logo {
-    min-height: 80px;
-    background: url(/src/assets/images/logo.png) 0/130px no-repeat;
+  min-height: 80px;
+  background: url(/src/assets/images/logo.png) 0/130px no-repeat;
 }
 
 .logo--footer {
-    min-height: 80px;
-    background: url(/src/assets/images/logo.png) 0/130px no-repeat;
+  min-height: 80px;
+  background: url(/src/assets/images/logo.png) 0/130px no-repeat;
 }
 
-@mixin links ($link, $visited, $hover, $active) {
+.input-text {
+  color: $text-color;
+  width: 100%; /* Full width */
+  padding: 8px; /* Some padding */
+  border: 1px solid $text-color; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  background-color: $bg-form-color;
+}
 
-    & {
-        color: $link;
-        text-decoration: none;
+.info-privacitat {
+  font-size: 0.75rem;
+}
 
-        &:visited {
-            color: $visited;
-        }
+.input-checkbox{
+  accent-color: $primary-color;
+}
 
-        &:hover {
-            color: $hover;
-        }
+/* Style the submit button with a specific background color etc */
+.btn {
+  margin-top: 10px;
+  padding: 2px;
+  height: 2rem;
+  width: 6rem;
+  color: $secondary-dark;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: 0.5rem;
+}
 
-        &:active,
-        &:focus {
-            color: $active;
-        }
+.btn:hover {
+  border: 1px solid $text-color
+}
+
+@mixin links($link, $visited, $hover, $active) {
+  & {
+    color: $link;
+    text-decoration: none;
+
+    &:visited {
+      color: $visited;
     }
+
+    &:hover {
+      color: $hover;
+    }
+
+    &:active,
+    &:focus {
+      color: $active;
+    }
+  }
 }
 
 .main-link {
-    @include links($link-color, $visited-color, $hover-color, $hover-color);
+  @include links($link-color, $visited-color, $hover-color, $hover-color);
 }
 
-@supports (display:grid) {
-    .portada {
-        max-width: none;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 11vh 78vh 11vh;
-        justify-content: start;
-        gap: 20px;
-    }
+@supports (display: grid) {
+  .portada {
+    max-width: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 5fr fit-content 1fr;
+    justify-content: start;
+    gap: 20px;
+  }
 
-    .logo {
-        grid-column: 3 / 7;
-        grid-row: 1 / 2;
-        position: relative;
-        left: -10px;
-    }
+  .logo {
+    grid-column: 3 / 7;
+    grid-row: 1 / 2;
+    position: relative;
+    left: -10px;
+    margin-bottom: -20px;
+  }
 
-    .nav-menu {
-        grid-column: -7 / -3;
-        grid-row: 1 / 2;
-        position: relative;
-        top: 45%;
-        right: 0;
-        text-align: end;
-    }
+  .nav-menu {
+    grid-column: 6 / 11;
+    grid-row: 1 / 2;
+    position: relative;
+    height: 2rem;
+    top: 42%;
+    right: 0;
+    text-align: end;
+  }
 
-    .main-portada {
-        grid-column: 1 / 13;
-        grid-row: 2 / 3;
-        background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
-        height: 78vh;
-        opacity: 0.3;
-        z-index: 2;
-    }
+  .main-portada {
+    grid-column: 1 / 13;
+    grid-row: 2 / 3;
+    background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
+    height: 78vh;
+    opacity: 0.3;
+    z-index: 2;
+  }
 
-    .frase-portada {
-        grid-column: 1 / 13;
-        grid-row: 2 / 3;
-        width: 50vw;
-        margin: auto;
-        text-align: center;
-        z-index: 3;
-    }
+  .frase-portada {
+    grid-column: 1 / 13;
+    grid-row: 2 / 3;
+    width: 50vw;
+    margin: auto;
+    text-align: center;
+    z-index: 3;
+  }
 
-    .before-footer {
-        grid-column: 3 / -3;
-        grid-row: 3;
-        height: 1px;
-        background-color: $primary-color;
-        margin-top: 0;
-    }
+  .contacte {
+    grid-column: 4 / 10;
+    grid-row: 3 / 4;
+  }
 
-    .logo--footer {
-        grid-column: 3 / 7;
-        grid-row: 3 / 4;
-        position: relative;
-        left: -10px;
-    }
+  .before-footer {
+    grid-column: 3 / -3;
+    grid-row: 4;
+    height: 1px;
+    background-color: $primary-color;
+    margin-top: 0;
+  }
 
-    .nav-menu--footer {
-        grid-column: 5 / 9;
-        grid-row: 3 / 4;
-        position: relative;
-        top: 45%;
-        right: 0;
-        text-align: center;
-        font-size: 0.7rem;
-    }
+  .logo--footer {
+    grid-column: 3 / 7;
+    grid-row: 4 / 5;
+    position: relative;
+    left: -10px;
+  }
+
+  .nav-menu--footer {
+    grid-column: 5 / 9;
+    grid-row: 4 / 5;
+    height: 2rem;
+    position: relative;
+    top: 38%;
+    right: 0;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  .xarxes-socials {
+    grid-column: 10 / 11;
+    grid-row: 4 / 5;
+    height: 2rem;
+    text-align: end;
+    position: relative;
+    top: 38%;
+  }
 }
 
 .footer {
-    margin-top: 1.5rem;
-    font-size: 0.75rem;
-    text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
 }

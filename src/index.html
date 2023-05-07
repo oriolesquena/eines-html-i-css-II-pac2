@@ -1,38 +1,172 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>Club Escacs Olot</title>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-  <!-- do not remove this line! -->
-  <title>Club Escacs Olot</title>
-</head>
+  <body class="portada">
+    <div class="logo"></div>
+    <nav class="nav-menu">
+      <ul class="primary-nav list-inline">
+        <li class="list-inline-item me-4">
+          <a class="main-link" href="index.html">Page Two</a>
+        </li>
+        <li class="list-inline-item me-4">
+          <a class="main-link" href="index.html">Page Three</a>
+        </li>
+        <li class="list-inline-item me-0">
+          <a class="main-link" href="index.html">Page Four</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-portada"></div>
+    <h1 class="frase-portada display-4">
+      Vols guanyar-ho tot?<br />Vine a jugar al<br /><strong
+        >Club Escacs Olot</strong
+      >!
+    </h1>
+    <div class="contacte">
+      <p>
+        T'agradaria venir a provar de jugar a escacs amb nosaltres? Si la
+        resposta és que si, omple el següent formulari o bé contacta amb
+        nosaltres a través del telèfon o email que hi ha a sota!
+      </p>
+      <form class="formulari-contacte" name="contact" method="POST" netlify>
+        <div>
+          <label for="nom">
+            <span><strong>Nom</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="text"
+            id="nom"
+            name="nomusuari"
+            pattern="[a-zA-Z &#39;-]{2,64}"
+            required
+          />
+        </div>
 
-<body class="portada">
-  <div class="logo">
-  </div>
-  <nav class="nav-menu">
-    <ul class="primary-nav list-inline">
-      <li class="list-inline-item me-4">
-        <a class="main-link" href="index.html">Page Two</a>
-      </li>
-      <li class="list-inline-item me-4">
-        <a class="main-link" href="index.html">Page Three</a>
-      </li>
-      <li class="list-inline-item">
-        <a class="main-link" href="index.html">Page Four</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="main-portada">
-  </div>
-  <h1 class="frase-portada display-4">Vols guanyar-ho tot?<br>Vine a jugar al<br><strong>Club Escacs Olot</strong>!</h1>
-  <hr class="before-footer">
-  <div class="logo--footer">
-  </div>
-  <nav class="nav-menu--footer">
+        <div>
+          <label for="cognoms">
+            <span><strong>Cognoms</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="text"
+            id="cognoms"
+            name="cognomsusuari"
+            pattern="[a-zA-Z &#39;-]{2,128}"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="mail">
+            <span><strong>Correu electrònic</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="email"
+            id="mail"
+            name="mailusuari"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="telf">
+            <span><strong>Telèfon</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="tel"
+            id="telf"
+            name="telfusuari"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="tema">
+            <span><strong>Tema</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="text"
+            id="tema"
+            name="tema-contacte"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="msg">
+            <span><strong>Missatge</strong></span>
+          </label>
+          <textarea
+            class="input-text"
+            id="msg"
+            name="missatge_usuari"
+          ></textarea>
+        </div>
+
+        <section class="info-privacitat">
+          <p>
+            INFORMACIÓ SOBRE PROTECCIÓ DE DADES DEL
+            <strong>CLUB ESCACS OLOT</strong>. <strong>Finalitats</strong>:
+            recollida de dades per poder contactar amb l'interessat/da.
+            <strong>Legitimació</strong>: Consentiment de l'interessat/da.
+            <strong>Destinataris</strong>: No estan previstes cessions de dades
+            a tercers, excepte obligació legal. <strong>Drets</strong>: Pot
+            retirar el seu consentiment en qualsevol moment, així com accedir,
+            rectificar, suprimir les seves dades i altres drets dirigint-se a
+            <a href="mailto:info@escacsolot.cat" target="_blank" class="text"
+              >info@escacsolot.cat</a
+            >. <strong>Informació Addicional</strong>: Pot ampliar la informació
+            en l'enllaç d'<a href="" target="_blank" class="text">Avís Legal</a>
+            i
+            <a href="" target="_blank" class="text">Política de privacitat</a>.
+          </p>
+          <div>
+            <input
+              class="input-checkbox"
+              type="checkbox"
+              id="privacitat"
+              name="politica_privacitat"
+              value="politica"
+              required
+            />
+            <label class="label-checkbox" for="privacitat">
+              <span
+                >He llegit i accepto la
+                <a href="" target="_blank" class="text"
+                  >política de privacitat</a
+                ></span
+              >
+              <span aria-label="required">*</span>
+            </label>
+          </div>
+        </section>
+        <section>
+          <div>
+            <button class="btn" type="submit">ENVIA</button>
+          </div>
+        </section>
+      </form>
+    </div>
+    <hr class="before-footer" />
+    <div class="logo--footer"></div>
+    <nav class="nav-menu--footer">
       <ul class="primary-nav list-inline">
         <li class="list-inline-item me-4">
           <a class="main-link" href="index.html">Front Page</a>
@@ -43,15 +177,23 @@
         <li class="list-inline-item me-4">
           <a class="main-link" href="index.html">Page Three</a>
         </li>
-        <li class="list-inline-item">
+        <li class="list-inline-item me-0">
           <a class="main-link" href="index.html">Page Four</a>
         </li>
       </ul>
-  </nav>
-  <div class="xarxes-socials">
-  </div>
-  <script type="module" src="./assets/scripts/main.js"></script>
-  <!-- do not remove this line! -->
-</body>
-
+    </nav>
+    <div class="xarxes-socials">
+      <a href="https://instagram.com/clubescacsolot" target="_blank"
+        ><span class="fa-brands fa-instagram me-2"></span
+      ></a>
+      <a href="https://twitter.com/clubescacsolot" target="_blank"
+        ><span class="fa-brands fa-twitter me-2"></span
+      ></a>
+      <a href="https://facebook.com/clubescacsolot" target="_blank"
+        ><span class="fa-brands fa-facebook"></span
+      ></a>
+    </div>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
 </html>
