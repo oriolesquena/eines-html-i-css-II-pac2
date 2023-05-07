@@ -21,4 +21,11 @@ $theme-colors: (
   'secondary': #006715,
 );
 
-$mqMinWidth: 420px;
+//different devices screen width
+$small-width-smartphones: 350px;
+$tablet-min-width: 560px;
+$pc-min-width: 1200px;
+
+//global page width
+$global-width: 60vw;
+$max-width: 850px;

@@ -5,7 +5,7 @@
 body {
   height: 100%;
   margin: 0;
-  padding: 2rem;
+  padding: 1rem 2rem;
   font-family: $font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -13,18 +13,50 @@ body {
   background-color: $secondary-dark;
 }
 
-.list-inline-item {
-  margin-right: 1rem;
-}
-
 .logo {
   min-height: 80px;
+  width: 130px;
   background: url(/src/assets/images/logo.png) 0/130px no-repeat;
+  position: relative;
+  left: calc(50% - 130px/2);
+}
+
+.nav-menu {
+  text-align: center;
+}
+
+.main-portada {
+  background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
+  height: 30vh;
+  width: 100vw;
+  margin-left: -2rem;
+  opacity: 0.3;
+}
+
+.frase-portada {
+  width: 80vw;
+  margin: auto;
+  margin-bottom: -15vh;
+  position: relative;
+  top: -24vh;
+  text-align: center;
+  z-index: 3;
 }
 
 .logo--footer {
   min-height: 80px;
+  width: 130px;
   background: url(/src/assets/images/logo.png) 0/130px no-repeat;
+  position: relative;
+  left: calc(50% - 130px/2);
+}
+
+.nav-menu--footer {
+  text-align: center;
+}
+
+.xarxes-socials {
+  text-align: center;
 }
 
 .input-text {
@@ -44,7 +76,7 @@ body {
   font-size: 0.75rem;
 }
 
-.input-checkbox{
+.input-checkbox {
   accent-color: $primary-color;
 }
 
@@ -61,7 +93,7 @@ body {
 }
 
 .btn:hover {
-  border: 1px solid $text-color
+  border: 1px solid $text-color;
 }
 
 @mixin links($link, $visited, $hover, $active) {
@@ -89,90 +121,92 @@ body {
 }
 
 @supports (display: grid) {
-  .portada {
-    max-width: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr 5fr fit-content 1fr;
-    justify-content: start;
-    gap: 20px;
-  }
+  @media screen and (min-width: $pc-min-width) {
+    .portada {
+      max-width: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 1fr 5fr fit-content 1fr;
+      justify-content: start;
+      gap: 20px;
+    }
 
-  .logo {
-    grid-column: 3 / 7;
-    grid-row: 1 / 2;
-    position: relative;
-    left: -10px;
-    margin-bottom: -20px;
-  }
+    .logo {
+      grid-column: 3 / 7;
+      grid-row: 1 / 2;
+      position: relative;
+      left: -10px;
+      margin-bottom: -20px;
+    }
 
-  .nav-menu {
-    grid-column: 6 / 11;
-    grid-row: 1 / 2;
-    position: relative;
-    height: 2rem;
-    top: 42%;
-    right: 0;
-    text-align: end;
-  }
+    .nav-menu {
+      grid-column: 6 / 11;
+      grid-row: 1 / 2;
+      position: relative;
+      height: 2rem;
+      top: 42%;
+      right: 0;
+      text-align: end;
+    }
 
-  .main-portada {
-    grid-column: 1 / 13;
-    grid-row: 2 / 3;
-    background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
-    height: 78vh;
-    opacity: 0.3;
-    z-index: 2;
-  }
+    .main-portada {
+      grid-column: 1 / 13;
+      grid-row: 2 / 3;
+      background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
+      height: 78vh;
+      opacity: 0.3;
+      z-index: 2;
+    }
 
-  .frase-portada {
-    grid-column: 1 / 13;
-    grid-row: 2 / 3;
-    width: 50vw;
-    margin: auto;
-    text-align: center;
-    z-index: 3;
-  }
+    .frase-portada {
+      grid-column: 1 / 13;
+      grid-row: 2 / 3;
+      width: 50vw;
+      margin: auto;
+      text-align: center;
+      z-index: 3;
+    }
 
-  .contacte {
-    grid-column: 4 / 10;
-    grid-row: 3 / 4;
-  }
+    .contacte {
+      grid-column: 4 / 10;
+      grid-row: 3 / 4;
+    }
 
-  .before-footer {
-    grid-column: 3 / -3;
-    grid-row: 4;
-    height: 1px;
-    background-color: $primary-color;
-    margin-top: 0;
-  }
+    .before-footer {
+      grid-column: 3 / -3;
+      grid-row: 4;
+      height: 1px;
+      background-color: $primary-color;
+      margin-top: 0;
+    }
 
-  .logo--footer {
-    grid-column: 3 / 7;
-    grid-row: 4 / 5;
-    position: relative;
-    left: -10px;
-  }
+    .logo--footer {
+      grid-column: 3 / 7;
+      grid-row: 4 / 5;
+      position: relative;
+      left: -10px;
+    }
 
-  .nav-menu--footer {
-    grid-column: 5 / 9;
-    grid-row: 4 / 5;
-    height: 2rem;
-    position: relative;
-    top: 38%;
-    right: 0;
-    text-align: center;
-    font-size: 0.7rem;
-  }
+    .nav-menu--footer {
+      grid-column: 5 / 9;
+      grid-row: 4 / 5;
+      height: 2rem;
+      position: relative;
+      top: 36%;
+      right: 0;
+      text-align: center;
+      font-size: 0.7rem;
+    }
 
-  .xarxes-socials {
-    grid-column: 10 / 11;
-    grid-row: 4 / 5;
-    height: 2rem;
-    text-align: end;
-    position: relative;
-    top: 38%;
+    .xarxes-socials {
+      grid-column: 10 / 11;
+      grid-row: 4 / 5;
+      height: 2rem;
+      text-align: end;
+      position: relative;
+      top: 36%;
+    }
   }
 }
 
