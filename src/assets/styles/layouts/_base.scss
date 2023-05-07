@@ -13,87 +13,35 @@ body {
   background-color: $secondary-dark;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .primary-nav {
+    font-size: 0.7rem;
+  }
+}
+
 .logo {
   min-height: 80px;
   width: 130px;
   background: url(/src/assets/images/logo.png) 0/130px no-repeat;
-  position: relative;
-  left: calc(50% - 130px/2);
+  margin-left: -10px;
 }
 
 .nav-menu {
   text-align: center;
 }
 
-.main-portada {
-  background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
-  height: 30vh;
-  width: 100vw;
-  margin-left: -2rem;
-  opacity: 0.3;
-}
-
-.frase-portada {
-  width: 80vw;
-  margin: auto;
-  margin-bottom: -15vh;
-  position: relative;
-  top: -24vh;
-  text-align: center;
-  z-index: 3;
-}
-
-.logo--footer {
-  min-height: 80px;
-  width: 130px;
-  background: url(/src/assets/images/logo.png) 0/130px no-repeat;
-  position: relative;
-  left: calc(50% - 130px/2);
-}
-
-.nav-menu--footer {
-  text-align: center;
-}
-
 .xarxes-socials {
   text-align: center;
-}
-
-.input-text {
-  color: $text-color;
-  width: 100%; /* Full width */
-  padding: 8px; /* Some padding */
-  border: 1px solid $text-color; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-  background-color: $bg-form-color;
-}
-
-.info-privacitat {
-  font-size: 0.75rem;
-}
-
-.input-checkbox {
-  accent-color: $primary-color;
-}
-
-/* Style the submit button with a specific background color etc */
-.btn {
-  margin-top: 10px;
-  padding: 2px;
-  height: 2rem;
-  width: 6rem;
-  color: $secondary-dark;
-  background-color: $primary-color;
-  border: 1px solid $primary-color;
-  border-radius: 0.5rem;
-}
-
-.btn:hover {
-  border: 1px solid $text-color;
 }
 
 @mixin links($link, $visited, $hover, $active) {
@@ -121,97 +69,87 @@ body {
 }
 
 @supports (display: grid) {
+  .portada {
+    max-width: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr fit-content 1fr;
+    justify-content: start;
+    gap: 20px;
+  }
+
+  .header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-top: 1rem;
+  }
+
+  .before-footer {
+    grid-column: 1 / 2;
+    grid-row: 4;
+    height: 1px;
+    background-color: $primary-color;
+    margin-top: 0;
+  }
+
+  .footer {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+    height: 20vh;
+    justify-content: space-around;
+  }
+
+  @media screen and (min-width: $tablet-min-width) {
+    .portada {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    .header {
+      grid-column: 2 / 8;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+      margin-bottom: -10px;
+    }
+
+    .before-footer {
+      grid-column: 2 / 8;
+    }
+
+    .footer {
+      grid-column: 2 / 8;
+      height: 10vh;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: revert;
+    }
+
+    .xarxes-socials {
+      margin-left: 56px;
+    }
+  }
+
   @media screen and (min-width: $pc-min-width) {
     .portada {
-      max-width: none;
-      padding: 0;
-      display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 1fr 5fr fit-content 1fr;
-      justify-content: start;
-      gap: 20px;
     }
 
-    .logo {
-      grid-column: 3 / 7;
+    .header {
+      grid-column: 3 / 11;
       grid-row: 1 / 2;
-      position: relative;
-      left: -10px;
       margin-bottom: -20px;
-    }
-
-    .nav-menu {
-      grid-column: 6 / 11;
-      grid-row: 1 / 2;
-      position: relative;
-      height: 2rem;
-      top: 42%;
-      right: 0;
-      text-align: end;
-    }
-
-    .main-portada {
-      grid-column: 1 / 13;
-      grid-row: 2 / 3;
-      background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
-      height: 78vh;
-      opacity: 0.3;
-      z-index: 2;
-    }
-
-    .frase-portada {
-      grid-column: 1 / 13;
-      grid-row: 2 / 3;
-      width: 50vw;
-      margin: auto;
-      text-align: center;
-      z-index: 3;
-    }
-
-    .contacte {
-      grid-column: 4 / 10;
-      grid-row: 3 / 4;
+      margin-top: 0;
     }
 
     .before-footer {
       grid-column: 3 / -3;
-      grid-row: 4;
-      height: 1px;
-      background-color: $primary-color;
-      margin-top: 0;
     }
 
-    .logo--footer {
-      grid-column: 3 / 7;
-      grid-row: 4 / 5;
-      position: relative;
-      left: -10px;
-    }
-
-    .nav-menu--footer {
-      grid-column: 5 / 9;
-      grid-row: 4 / 5;
-      height: 2rem;
-      position: relative;
-      top: 36%;
-      right: 0;
-      text-align: center;
-      font-size: 0.7rem;
-    }
-
-    .xarxes-socials {
-      grid-column: 10 / 11;
-      grid-row: 4 / 5;
-      height: 2rem;
-      text-align: end;
-      position: relative;
-      top: 36%;
+    .footer {
+      grid-column: 3 / 11;
     }
   }
-}
-
-.footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
 }

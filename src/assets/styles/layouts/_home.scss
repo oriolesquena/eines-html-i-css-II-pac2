@@ -1,0 +1,122 @@
+@import 'base';
+
+.main-portada {
+  background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
+  height: 250px;
+  width: 100vw;
+  margin-left: -2rem;
+  opacity: 0.3;
+}
+
+.frase-portada {
+  width: 80vw;
+  margin: auto;
+  margin-bottom: -110px;
+  position: relative;
+  top: -195px;
+  text-align: center;
+  z-index: 3;
+}
+
+.input-text {
+  color: $text-color;
+  width: 100%; /* Full width */
+  padding: 8px; /* Some padding */
+  border: 1px solid $text-color; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  background-color: $bg-form-color;
+}
+
+.info-privacitat {
+  font-size: 0.75rem;
+}
+
+.input-checkbox {
+  accent-color: $primary-color;
+}
+
+.form-container {
+  text-align: center;
+}
+
+/* Style the submit button with a specific background color etc */
+.btn {
+  margin-top: 10px;
+  padding: 2px;
+  height: 2rem;
+  width: 6rem;
+  color: $secondary-dark;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: 0.5rem;
+}
+
+.btn:hover {
+  border: 1px solid $text-color;
+}
+
+@supports (display: grid) {
+  .main-portada {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background: url(/src/assets/images/bg-portada.jpg) center/cover no-repeat;
+    height: 30vh;
+    opacity: 0.3;
+    z-index: 2;
+    margin-left: 0;
+  }
+
+  .frase-portada {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    width: 90vw;
+    position: revert;
+    margin: auto;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .contacte {
+    grid-row: 3 / 4;
+    width: 90vw;
+    margin: auto;
+  }
+
+  @media screen and (min-width: $tablet-min-width) {
+    .main-portada {
+      grid-column: 1 / 9;
+      height: 35vh;
+    }
+
+    .frase-portada {
+      grid-column: 1 / 9;
+      width: 70vw;
+    }
+
+    .contacte {
+      grid-column: 2 / 8;
+      grid-row: 3 / 4;
+      width: revert;
+    }
+  }
+
+  @media screen and (min-width: $pc-min-width) {
+    .main-portada {
+      grid-column: 1 / 13;
+      height: 78vh;
+    }
+
+    .frase-portada {
+      grid-column: 1 / 13;
+      width: 50vw;
+    }
+
+    .contacte {
+      grid-column: 4 / 10;
+    }
+  }
+}
