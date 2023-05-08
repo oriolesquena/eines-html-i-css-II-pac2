@@ -9,11 +9,7 @@
 }
 
 .text-on-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   width: 80vw;
-  height: 200px;
   margin: auto;
   margin-bottom: -110px;
   position: relative;
@@ -23,18 +19,12 @@
 }
 
 .campionat {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
+  margin-bottom: 0;
+  width: 85%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.intro {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr;
-  gap: 20px;
 }
 
 @counter-style circled-decimal {
@@ -60,6 +50,102 @@
   }
 }
 
+.cartell {
+  width: 80%;
+  margin: auto;
+  margin-top: -1rem;
+}
+
+.cartell--image {
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cartell--image:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 4; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 70%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+.modal-caption {
+  margin: auto;
+  display: block;
+  width: 70%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, .modal-caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cartell--caption {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.info {
+  margin-top: -1rem;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media screen and (max-width: $tablet-min-width){
+  .modal-content {
+    width: 95%;
+  }
+}
+
 @supports (display: grid) {
   .bg-image {
     grid-column: 1 / 2;
@@ -73,16 +159,10 @@
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     width: 90vw;
-    height: 25vh;
     position: revert;
     margin: auto;
     text-align: center;
     z-index: 3;
-    gap: 3rem;
-
-    :last-child {
-      font-size: 1.25rem;
-    }
 
     .campionat {
       grid-column: 1 / 2;
@@ -99,16 +179,21 @@
     .text-on-image {
       grid-column: 1 / 9;
       width: 70vw;
-      height: 25vh;
-      gap: 5rem;
-
-      :last-child {
-        font-size: 1.75rem;
-      }
     }
 
     .campionat {
       grid-column: 2 / 8;
+    }
+
+    .cartell {
+      width: 70%;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr;
+      gap: 20px;
     }
   }
 
@@ -121,18 +206,15 @@
     .text-on-image {
       grid-column: 1 / 13;
       width: 50vw;
-      height: 50vh;
-      gap: 10rem;
-
-      :last-child {
-        font-size: 2rem;
-      }
     }
 
     .campionat {
       grid-column: 4 / 10;
-      width: 80%;
-      margin: 2rem auto;
+      width: 90%;
+    }
+
+    .cartell {
+      width: 50%;
     }
   }
 }
