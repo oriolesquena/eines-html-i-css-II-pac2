@@ -1,8 +1,9 @@
 @use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700;800&display=swap');
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-  'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-  'Segoe UI Symbol';
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
 $font-family-serif: 'Georgia', 'Times New Roman', serif;
 $font-size: 16px;
 $line-height: 24px;
@@ -11,7 +12,7 @@ $primary-color: #c8eba6;
 $secondary-color: #006715;
 $secondary-dark: color.scale($secondary-color, $lightness: -70%);
 $text-color: #d5dcd7;
-$bg-form-color: color.scale($secondary-dark, $lightness: 8% ,$saturation: -70%);
+$bg-form-color: color.scale($secondary-dark, $lightness: 8%, $saturation: -70%);
 
 $link-color: $primary-color;
 $hover-color: color.scale($link-color, $lightness: 20%, $saturation: -30%);

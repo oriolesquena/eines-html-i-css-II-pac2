@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Oriol Esquena" />
+    <meta
+      name="description"
+      content="Lloc web creat com a exercici de la PAC2 de l'assignatura
+        Eines HTML i CSS II del màster Desenvolupament de Llocs i Aplicacions Web de la UOC. 
+        S'hi troba informació sobre el Club d'Escacs d'Olot (fictici)."
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link
+      rel="icon"
+      type="image/svg"
+      sizes="32x32"
+      href="./assets/images/chess-pawn-solid.svg"
+    />
+    <!-- do not remove this line! -->
+    <title>Campionats del Club Escacs Olot</title>
+  </head>
+
+  <body class="body">
+    <include src="./views/header.html"></include>
+    <div class="bg-image"></div>
+    <div class="text-on-image">
+      <h1 class="display-2">Campionat del Club</h1>
+      <h1 class="display-6">per Joan Soler</h1>
+    </div>
+    <div class="campionat">
+      <section class="intro">
+        <blockquote class="blockquote">
+          <p>
+            16, 17 i 18 de juny de 2023: Primer campionat municipal del Club
+            Escacs Olot.
+          </p>
+        </blockquote>
+        <p>
+          El proper mes de juny tindrà lloc el primer campionat d'escacs
+          organitzat a Olot pel club que porta el seu nom. La idea és que sigui
+          obert a tothom i que hi hagi tant un campionat juvenil, com un
+          d'absolut.
+        </p>
+      </section>
+      <section class="dies-torneig">
+        <ol class="ordered-list">
+          <li class="ordered-list-item">
+            <h5>Subheading</h5>
+            <p>Text</p>
+          </li>
+          <li class="ordered-list-item">
+            <h5>Subheading</h5>
+            <p>Text</p>
+          </li>
+          <li class="ordered-list-item">
+            <h5>Subheading</h5>
+            <p>Text</p>
+          </li>
+        </ol>
+      </section>
+    </div>
+    <hr class="before-footer" />
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

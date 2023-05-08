@@ -1,0 +1,138 @@
+@import 'base';
+
+.bg-image {
+  background: url(/src/assets/images/bg-campionat.jpeg) center/cover no-repeat;
+  height: 250px;
+  width: 100vw;
+  margin-left: -2rem;
+  opacity: 0.3;
+}
+
+.text-on-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 80vw;
+  height: 200px;
+  margin: auto;
+  margin-bottom: -110px;
+  position: relative;
+  top: -195px;
+  text-align: center;
+  z-index: 3;
+}
+
+.campionat {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+
+@counter-style circled-decimal {
+  system: fixed;
+  symbols: '\2460''\2461''\2462''\2463''\2464''\2465''\2466''\2467''\2468';
+  suffix: ' ';
+}
+
+.ordered-list {
+  list-style-type: circled-decimal;
+}
+
+.ordered-list-item {
+  font-size: 2rem;
+  vertical-align: top;
+
+  > h5 {
+    font-size: 1.75rem;
+    font-weight: 300;
+  }
+  > p {
+    font-size: 1rem;
+  }
+}
+
+@supports (display: grid) {
+  .bg-image {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    height: 30vh;
+    z-index: 2;
+    margin-left: 0;
+  }
+
+  .text-on-image {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    width: 90vw;
+    height: 25vh;
+    position: revert;
+    margin: auto;
+    text-align: center;
+    z-index: 3;
+    gap: 3rem;
+
+    :last-child {
+      font-size: 1.25rem;
+    }
+
+    .campionat {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+  }
+
+  @media screen and (min-width: $tablet-min-width) {
+    .bg-image {
+      grid-column: 1 / 9;
+      height: 35vh;
+    }
+
+    .text-on-image {
+      grid-column: 1 / 9;
+      width: 70vw;
+      height: 25vh;
+      gap: 5rem;
+
+      :last-child {
+        font-size: 1.75rem;
+      }
+    }
+
+    .campionat {
+      grid-column: 2 / 8;
+    }
+  }
+
+  @media screen and (min-width: $pc-min-width) {
+    .bg-image {
+      grid-column: 1 / 13;
+      height: 60vh;
+    }
+
+    .text-on-image {
+      grid-column: 1 / 13;
+      width: 50vw;
+      height: 50vh;
+      gap: 10rem;
+
+      :last-child {
+        font-size: 2rem;
+      }
+    }
+
+    .campionat {
+      grid-column: 4 / 10;
+      width: 80%;
+      margin: 2rem auto;
+    }
+  }
+}
