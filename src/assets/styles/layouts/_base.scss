@@ -31,7 +31,7 @@ body {
 }
 
 .logo {
-  min-height: 80px;
+  min-height: 100px;
   width: 130px;
   background: url(/src/assets/images/logo.png) 0/130px no-repeat;
   margin-left: -10px;
@@ -70,7 +70,7 @@ body {
 }
 
 @supports (display: grid) {
-  .portada {
+  .body {
     max-width: none;
     padding: 0;
     display: grid;
@@ -105,7 +105,7 @@ body {
   }
 
   @media screen and (min-width: $tablet-min-width) {
-    .portada {
+    .body {
       grid-template-columns: repeat(8, 1fr);
     }
 
@@ -134,7 +134,7 @@ body {
   }
 
   @media screen and (min-width: $pc-min-width) {
-    .portada {
+    .body {
       grid-template-columns: repeat(12, 1fr);
     }
 
@@ -151,6 +151,10 @@ body {
 
     .footer {
       grid-column: 3 / 11;
+
+      .primary-nav {
+        font-size: 0.9rem;
+      }
     }
   }
 }

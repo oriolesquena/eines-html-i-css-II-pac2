@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Oriol Esquena" />
+    <meta
+      name="description"
+      content="Lloc web creat com a exercici de la PAC2 de l'assignatura
+        Eines HTML i CSS II del màster Desenvolupament de Llocs i Aplicacions Web de la UOC. 
+        S'hi troba informació sobre el Club d'Escacs d'Olot (fictici)."
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link
+      rel="icon"
+      type="image/svg"
+      sizes="32x32"
+      href="./assets/images/chess-pawn-solid.svg"
+    />
+    <!-- do not remove this line! -->
+    <title>Club Escacs Olot</title>
+  </head>
+
+  <body class="body">
+    <include src="./views/header.html"></include>
+    <hr class="after-header" />
+    <h1 class="titol-pagina display-4">Membres del Club</h1>
+    <div class="club-members">
+      <div class="member">
+        <div class="member--image">
+          <img
+            src="https://en.chessbase.com/Portals/all/thumbs/081/81452.jpeg"
+            alt="Josep jugant a escacs"
+          />
+        </div>
+        <div class="member--info">
+          <h3>Josep Sánchez</h3>
+          <p>
+            Jugador d'escacs des dels 7 anys, és actualment el president del
+            club i un dels millors jugadors de Catalunya
+          </p>
+          <p>ELO: 2058</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="member--image">
+          <img
+            src="https://www.chessmasterschool.com/images/blog/chess-prodigy.jpg"
+            alt="Sergi jugant a escacs"
+          />
+        </div>
+        <div class="member--info">
+          <h3>Sergi Rodriguez</h3>
+          <p>
+            Dels jugadors més joves del club, però aprenent ràpidament. És un
+            gran fan dels trencaclosques.
+          </p>
+          <p>ELO: 1234</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="member--image">
+          <img
+            src="https://jugadoresdeajedrez.com/wp-content/uploads/2023/02/5-consejos-Como-convertirse-en-un-mejor-jugador-de-ajedrez-sin-un-entrenador.jpg"
+            alt="Joan jugant a escacs"
+          />
+        </div>
+        <div class="member--info">
+          <h3>Joan Soler</h3>
+          <p>
+            Va començar a jugar fa un any, però el seu aprenentatge ha estat
+            molt ràpid. Ja ha participat en algun torneig català amb bons
+            resultats.
+          </p>
+          <p>ELO: 1573</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="member--image">
+          <img
+            src="https://s2.abcstatics.com/abc/www/multimedia/deportes/2022/12/28/sara-Rgpc3Z4pCwiMCrRUbm4we0J-758x531@abc.jpg"
+            alt="Aina jugant a escacs"
+          />
+        </div>
+        <div class="member--info">
+          <h3>Aina Bru</h3>
+          <p>
+            Una de les grans jugadores del club. Gran estudiadora de la teoria,
+            coneix amb força detall la gran majoria d'obertures i és molt bona i
+            metòdica en els finals de partida.
+          </p>
+          <p>ELO: 1713</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="member--image">
+          <img
+            src="https://www.sommollet.cat/imatges/noticies/pere-garriga-campionat-cat.jpg"
+            alt="Xevi jugant a escacs"
+          />
+        </div>
+        <div class="member--info">
+          <h3>Xevi Compte</h3>
+          <p>
+            Jugador d'escacs principiant. Aprenent a poc a poc i amb moltes
+            ganes de millorar. Aquest any va jugar el seu primer torneig.
+          </p>
+          <p>ELO: 768</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="member--image">
+          <img
+            src="https://chessjournal.b-cdn.net/wp-content/uploads/2022/11/Chess-Skills-750x422.jpg"
+            alt="Abril jugant a escacs"
+          />
+        </div>
+        <div class="member--info">
+          <h3>Abril Riera</h3>
+          <p>
+            Nova jugadora al club. Fins ara havia jugat només en línia, però ara
+            ha començat a jugar sobre el taulell i també li encanta. Sobretot
+            molt bona amb partides ràpides.
+          </p>
+          <p>ELO: 992</p>
+        </div>
+      </div>
+    </div>
+    <hr class="before-footer" />
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

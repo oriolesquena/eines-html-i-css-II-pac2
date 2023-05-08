@@ -4,30 +4,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Oriol Esquena" />
+    <meta
+      name="description"
+      content="Lloc web creat com a exercici de la PAC2 de l'assignatura
+        Eines HTML i CSS II del màster Desenvolupament de Llocs i Aplicacions Web de la UOC. 
+        S'hi troba informació sobre el Club d'Escacs d'Olot (fictici)."
+    />
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link
+      rel="icon"
+      type="image/svg"
+      sizes="32x32"
+      href="./assets/images/chess-pawn-solid.svg"
+    />
     <!-- do not remove this line! -->
     <title>Club Escacs Olot</title>
   </head>
 
-  <body class="portada">
-    <header class="header">
-      <a href="index.html" class="logo"></a>
-      <nav class="nav-menu">
-        <ul class="primary-nav list-inline my-0">
-          <li class="list-inline-item me-4">
-            <a class="main-link" href="index.html">Page Two</a>
-          </li>
-          <li class="list-inline-item me-4">
-            <a class="main-link" href="index.html">Page Three</a>
-          </li>
-          <li class="list-inline-item me-0">
-            <a class="main-link" href="index.html">Page Four</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <body class="body">
+    <include src="./views/header.html"></include>
     <div class="main-portada"></div>
-    <h1 class="frase-portada display-4">
+    <h1 class="frase-portada display-2">
       Vols guanyar-ho tot?<br />Vine a jugar al<br /><strong
         >Club Escacs Olot</strong
       >!
@@ -168,36 +166,7 @@
       </form>
     </div>
     <hr class="before-footer" />
-    <footer class="footer">
-      <div class="logo"></div>
-      <nav class="nav-menu">
-        <ul class="primary-nav list-inline my-0">
-          <li class="list-inline-item me-4">
-            <a class="main-link" href="index.html">Front Page</a>
-          </li>
-          <li class="list-inline-item me-4">
-            <a class="main-link" href="index.html">Page Two</a>
-          </li>
-          <li class="list-inline-item me-4">
-            <a class="main-link" href="index.html">Page Three</a>
-          </li>
-          <li class="list-inline-item me-0">
-            <a class="main-link" href="index.html">Page Four</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="xarxes-socials">
-        <a href="https://instagram.com/clubescacsolot" target="_blank"
-          ><span class="fa-brands fa-instagram me-2"></span
-        ></a>
-        <a href="https://twitter.com/clubescacsolot" target="_blank"
-          ><span class="fa-brands fa-twitter me-2"></span
-        ></a>
-        <a href="https://facebook.com/clubescacsolot" target="_blank"
-          ><span class="fa-brands fa-facebook"></span
-        ></a>
-      </div>
-    </footer>
+    <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
     <!-- do not remove this line! -->
   </body>
