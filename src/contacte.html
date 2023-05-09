@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Oriol Esquena" />
+    <meta
+      name="description"
+      content="Lloc web creat com a exercici de la PAC2 de l'assignatura
+        Eines HTML i CSS II del màster Desenvolupament de Llocs i Aplicacions Web de la UOC. 
+        S'hi troba informació sobre el Club d'Escacs d'Olot (fictici)."
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link
+      rel="icon"
+      type="image/svg"
+      sizes="32x32"
+      href="./assets/images/chess-pawn-solid.svg"
+    />
+    <!-- do not remove this line! -->
+    <title>Contacte del Club Escacs Olot</title>
+  </head>
+
+  <body class="body">
+    <include src="./views/header.html"></include>
+    <hr class="after-header" />
+    <div class="dades">
+      <h1 class="titol-pagina display-4">Contacte</h1>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d739.1204542121488!2d2.486489769682918!3d42.182764498200626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12bacaeee93d0739%3A0x582a7b4c5151f609!2sClub%20Escacs%20Olot!5e0!3m2!1sca!2ses!4v1683655614577!5m2!1sca!2ses"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <dl class="description-list">
+        <dt>Telèfon</dt>
+        <dd><a href="tel:+34600123456">600 123 456</a></dd>
+
+        <dt>Correu electrònic</dt>
+        <dd><a href="mailto:info@escacsolot.cat">info@escacsolot.cat</a></dd>
+
+        <dt>Adreça</dt>
+        <dd>
+          Passeig de l'Escultor Miquel Blay, 6<br />
+          17800 Olot, Girona
+        </dd>
+      </dl>
+    </div>
+    <div class="contacte">
+      <p>
+        Has jugat mai a escacs? Vols aprendre'n? Ja en saps i t'agradaria
+        millorar el teu nivell? Anima't i vine a provar de jugar a escacs amb
+        nosaltres! Omple el següent formulari per contactar amb nosaltres i
+        saber-ne més!
+      </p>
+      <form class="formulari-contacte" name="contact" method="POST" netlify>
+        <div>
+          <label for="nom">
+            <span><strong>Nom</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="text"
+            id="nom"
+            name="nomusuari"
+            pattern="[a-zA-Z &#39;-]{2,64}"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="cognoms">
+            <span><strong>Cognoms</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="text"
+            id="cognoms"
+            name="cognomsusuari"
+            pattern="[a-zA-Z &#39;-]{2,128}"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="mail">
+            <span><strong>Correu electrònic</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="email"
+            id="mail"
+            name="mailusuari"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="telf">
+            <span><strong>Telèfon</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="tel"
+            id="telf"
+            name="telfusuari"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="tema">
+            <span><strong>Tema</strong></span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            class="input-text"
+            type="text"
+            id="tema"
+            name="tema-contacte"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="msg">
+            <span><strong>Missatge</strong></span>
+          </label>
+          <textarea
+            class="input-text"
+            id="msg"
+            name="missatge_usuari"
+          ></textarea>
+        </div>
+
+        <section class="info-privacitat">
+          <p>
+            INFORMACIÓ SOBRE PROTECCIÓ DE DADES DEL
+            <strong>CLUB ESCACS OLOT</strong>. <strong>Finalitats</strong>:
+            recollida de dades per poder contactar amb l'interessat/da.
+            <strong>Legitimació</strong>: Consentiment de l'interessat/da.
+            <strong>Destinataris</strong>: No estan previstes cessions de dades
+            a tercers, excepte obligació legal. <strong>Drets</strong>: Pot
+            retirar el seu consentiment en qualsevol moment, així com accedir,
+            rectificar, suprimir les seves dades i altres drets dirigint-se a
+            <a href="mailto:info@escacsolot.cat" target="_blank" class="text"
+              >info@escacsolot.cat</a
+            >. <strong>Informació Addicional</strong>: Pot ampliar la informació
+            en l'enllaç d'<a href="" target="_blank" class="text">Avís Legal</a>
+            i
+            <a href="" target="_blank" class="text">Política de privacitat</a>.
+          </p>
+          <div class="form-container">
+            <input
+              class="input-checkbox"
+              type="checkbox"
+              id="privacitat"
+              name="politica_privacitat"
+              value="politica"
+              required
+            />
+            <label class="label-checkbox" for="privacitat">
+              <span
+                >He llegit i accepto la
+                <a href="" target="_blank" class="text"
+                  >política de privacitat</a
+                ></span
+              >
+              <span aria-label="required">*</span>
+            </label>
+          </div>
+        </section>
+        <section>
+          <div class="form-container">
+            <button class="btn" type="submit">ENVIA</button>
+          </div>
+        </section>
+      </form>
+    </div>
+    <hr class="before-footer" />
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>
