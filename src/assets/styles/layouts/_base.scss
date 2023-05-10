@@ -73,6 +73,21 @@ body {
   .body {
     width: 70%;
   }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: -10px;
+  }
+
+  .footer {
+    height: 10vh;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (min-width: $pc-min-width) {
@@ -80,6 +95,8 @@ body {
     width: 55%;
   }
 }
+
+/*
 
 @supports (display: grid) {
   .body {
@@ -171,3 +188,5 @@ body {
     }
   }
 }
+
+*/
