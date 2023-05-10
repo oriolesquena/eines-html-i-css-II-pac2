@@ -1,17 +1,21 @@
-@import 'base';
+@import "base";
 
+
+// es crea un flex per gestionar els membres. Amb estil wrap
+// per tal que s"adapti a mides de diferents pantalles.
 .club-members {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
 }
 
+// cada membre té un propi flex on hi haurà la imatge, el text i l"ELO
 .member {
   display: flex;
-  flex-direction: column;
   width: 90%;
   text-align: center;
   margin: 0 auto;
+  flex-direction: column;
 }
 
 .member--image {
@@ -19,10 +23,15 @@
 
   img {
     width: 100%;
+
+    // es defineix la relació d"aspecte d"imatge
+    // per tal que siguin totes iguals
     aspect-ratio: 3 / 2;
-    object-fit: cover;
-    box-shadow: 0 0 5px 0.1 $text-color;
     border-radius: 5px;
+
+    // també se li dona un estil d"ombrejat a la imatge
+    box-shadow: 0 0 5px 0.1 $text-color;
+    object-fit: cover;
   }
 }
 
@@ -36,14 +45,16 @@
   }
 }
 
+// adaptaió per tauletes
 @media screen and (min-width: $tablet-min-width) {
+
   .member {
     width: 45%;
   }
 
   .member--info {
-    min-height: 12rem;
     height: fit-content;
+    min-height: 12rem;
 
     > h3,
     p {
@@ -52,17 +63,22 @@
   }
 }
 
+// adaptació per pantalles grans
 @media screen and (min-width: $pc-min-width) {
+
   .member {
     width: 30%;
   }
 }
 
+// en cas que suporti grid, es gestiona l"estil i la configuració
+// de les pàgines a través d"un grid
 @supports (display: grid) {
+
   .club-members {
+    margin-bottom: 1rem;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
-    margin-bottom: 1rem;
   }
 
   .after-header {
@@ -71,6 +87,7 @@
   }
 
   @media screen and (min-width: $tablet-min-width) {
+
     .club-members {
       grid-column: 2 / 8;
     }
@@ -81,6 +98,7 @@
   }
 
   @media screen and (min-width: $pc-min-width) {
+
     .club-members {
       grid-column: 4 / 10;
     }

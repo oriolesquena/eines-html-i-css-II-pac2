@@ -2,50 +2,60 @@
   box-sizing: border-box;
 }
 
+// definició de display habitual en els diferents blocs,
+// en aquest cas en flex i en columna
+%display-style-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+// definició dels estils generals del cos de les pàgines
 body {
-  height: 100%;
   width: 90%;
   max-width: $max-width;
-  margin: 0 auto;
-  font-family: $font-family-sans-serif;
+  height: 100%;
   font-size: $font-size;
+  font-family: $font-family-sans-serif;
   line-height: $line-height;
   color: $text-color;
   background-color: $secondary-dark;
+  margin: 0 auto;
 }
 
+// definició de la capçalera
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
+  @extend %display-style-column;
   z-index: 5;
+  margin-bottom: 20px;
 }
 
+// definició de la línia hr de sota la capçalera
 .after-header {
-  height: 2px;
   width: 100%;
+  height: 2px;
   background-color: $primary-color;
   margin-top: 0.5rem;
   margin-bottom: 2.5rem;
 }
 
+// definició dels títols de les pàgines
 .titol-pagina {
-  margin-bottom: 2rem;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
+// definició de la línia hr d'abans del peu de pàgina
 .before-footer {
   width: 100%;
+  height: 1px;
   background-color: $primary-color;
   margin-top: 2rem;
-  height: 1px;
 }
 
+// definició del peu de pàgina
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @extend %display-style-column;
   z-index: 5;
 
   .primary-nav {
@@ -53,23 +63,24 @@ body {
   }
 }
 
+// definició del logo de la capçalera i el peu
 .logo {
-  min-height: 100px;
-  width: 130px;
-  background: url(/src/assets/images/logo.png) 0/130px no-repeat;
-  margin-left: -10px;
   z-index: 5;
+  width: 130px;
+  min-height: 100px;
+  background: url("/src/assets/images/logo.png") 0/130px no-repeat;
+  margin-left: -10px;
 }
 
-.nav-menu {
-  text-align: center;
-}
-
+// aliniement del menú de navegació i de les xarxes socials
+.nav-menu,
 .xarxes-socials {
   text-align: center;
 }
 
+// definim els colors i estil dels links de la pàgina
 @mixin links($link, $visited, $hover, $active) {
+
   & {
     color: $link;
     text-decoration: none;
@@ -93,90 +104,106 @@ body {
   @include links($link-color, $visited-color, $hover-color, $hover-color);
 }
 
+// adaptacions per dispositius tauleta
 @media screen and (min-width: $tablet-min-width) {
+
+  // definició de display habitual en els diferents blocs,
+  // en aquest cas en flex i en fila
+  %display-style-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .body {
     width: 70%;
   }
 
   .header {
-    flex-direction: row;
-    justify-content: space-between;
+    @extend %display-style-row;
     margin-top: 10px;
     margin-bottom: -10px;
   }
 
   .footer {
+    @extend %display-style-row;
     height: 10vh;
-    flex-direction: row;
-    justify-content: space-between;
     margin-top: -10px;
     margin-bottom: 10px;
   }
 }
 
+// adaptacions per dispositius de pantalla gran
+
 @media screen and (min-width: $pc-min-width) {
+
   .body {
     width: 55%;
   }
 }
 
+// en cas que suporti grid, es gestiona l'estil i la configuració
+// de les pàgines a través d'un grid
+
 @supports (display: grid) {
+
   .body {
+    display: grid;
     width: revert;
     max-width: none;
     padding: 0;
-    display: grid;
+    gap: 20px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 5fr fit-content 1fr;
     justify-content: start;
-    gap: 20px;
   }
 
   .header {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
     margin-top: 1rem;
     margin-bottom: revert;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
 
   .after-header {
+    margin-top: -0.2rem;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    margin-top: -0.2rem;
   }
 
   .titol-pagina {
+    margin-top: 3rem;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    margin-top: 3rem
   }
 
   .before-footer {
+    margin-top: 0;
     grid-column: 1 / 2;
     grid-row: 4;
-    margin-top: 0;
   }
 
   .footer {
-    grid-column: 1 / 2;
-    grid-row: 4 / 5;
+    height: 20vh;
     margin-top: 0.8rem;
     margin-bottom: 1rem;
-    height: 20vh;
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
     justify-content: space-around;
   }
 
+
   @media screen and (min-width: $tablet-min-width) {
+
     .body {
       grid-template-columns: repeat(8, 1fr);
     }
 
     .header {
-      grid-column: 2 / 8;
-      flex-direction: row;
-      justify-content: space-between;
       margin-top: 10px;
       margin-bottom: -10px;
+      flex-direction: row;
+      grid-column: 2 / 8;
+      justify-content: space-between;
     }
 
     .after-header {
@@ -193,9 +220,9 @@ body {
     }
 
     .footer {
-      grid-column: 2 / 8;
       height: 10vh;
       flex-direction: row;
+      grid-column: 2 / 8;
       justify-content: space-between;
     }
 
@@ -204,16 +231,18 @@ body {
     }
   }
 
+
   @media screen and (min-width: $pc-min-width) {
+
     .body {
       grid-template-columns: repeat(12, 1fr);
     }
 
     .header {
+      margin-top: 0;
+      margin-bottom: -20px;
       grid-column: 3 / 11;
       grid-row: 1 / 2;
-      margin-bottom: -20px;
-      margin-top: 0;
     }
 
     .after-header {

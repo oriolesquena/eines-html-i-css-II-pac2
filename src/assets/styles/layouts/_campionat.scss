@@ -1,25 +1,30 @@
-@import 'base';
+@import "base";
 
+// el títol d"aquesta pàgina és més gran, perquè si suporta grid,
+// el text anirà sobre una imatge de fons
 .text-on-image {
-  margin: auto;
-  text-align: center;
   z-index: 3;
+  text-align: center;
+  margin: auto;
 }
 
+// definició de com es distribueix la informació del campionat
 .campionat {
+  display: flex;
   margin: 2rem auto;
   margin-bottom: 0;
-  display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
+// definició de nombres encerclats per tal de poder posar-los a la llista
 @counter-style circled-decimal {
+  suffix: " ";
+  symbols: "\2460""\2461""\2462""\2463""\2464""\2465""\2466""\2467""\2468";
   system: fixed;
-  symbols: '\2460''\2461''\2462''\2463''\2464''\2465''\2466''\2467''\2468';
-  suffix: ' ';
 }
 
+// llista ordenada on els nombres són encerclats
 .ordered-list {
   list-style-type: circled-decimal;
 }
@@ -32,11 +37,13 @@
     font-size: 1.75rem;
     font-weight: 300;
   }
+
   > p {
     font-size: 1rem;
   }
 }
 
+// definició de l"estil del cartell
 .cartell {
   width: 80%;
   margin: auto;
@@ -53,50 +60,63 @@
   opacity: 0.7;
 }
 
+
+// el següent apartat està tot enfocat a fer que la imatge
+// s"obri al davant de tot i s"ampliï quan li fem un clic.
+// informació extreta del següent enllaç:
+// https://www.w3schools.com/howto/howto_css_modal_images.asp
+
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 4; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
   top: 0;
+  left: 0;
+  z-index: 4; /* Sit on top */
+  display: none; /* Hidden by default */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  padding-top: 100px; /* Location of the box */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
 /* Modal Content (Image) */
 .modal-content {
-  margin: auto;
   display: block;
   width: 70%;
   max-width: 700px;
+  margin: auto;
+
+  // add animation zoom
+  animation-duration: 0.6s;
+  animation-name: zoom;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 .modal-caption {
-  margin: auto;
   display: block;
   width: 70%;
   max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
   height: 150px;
-}
+  color: #ccc;
+  text-align: center;
+  margin: auto;
+  padding: 10px 0;
 
-/* Add Animation - Zoom in the Modal */
-.modal-content, .modal-caption {
-  animation-name: zoom;
+  // add animation zoom
   animation-duration: 0.6s;
+  animation-name: zoom;
 }
 
 @keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
+
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 /* The Close Button */
@@ -104,9 +124,9 @@
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
+  color: #f1f1f1;
   transition: 0.3s;
 }
 
@@ -128,52 +148,57 @@
 
 /* 100% Image Width on Smaller Screens */
 @media screen and (max-width: $tablet-min-width){
+
   .modal-content {
     width: 95%;
   }
 }
 
+// fi del codi enfocat a crear la imatge més gran
+
+
+// adaptació del codi per tauletes i dispositius de
+// pantalla gran que no suporten grid
 @media screen and (min-width: $tablet-min-width) {
-  .intro {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    gap: 20px;
-  }
 
   .cartell {
     width: 50%;
   }
 }
 
+// en cas que suporti grid, es gestiona l"estil i la configuració
+// de les pàgines a través d"un grid
 @supports (display: grid) {
+
+  // que no es mostri la línia hr ja que ara ja hi ha imatge
   .hr-campionat {
-    opacity: 0;
+    display: none;
   }
 
   .campionat {
     width: 90%;
   }
 
+  // imatge de fons
   .bg-image {
-    background: url(/src/assets/images/bg-campionat.jpeg) center/cover no-repeat;
+    z-index: 2;
     width: 100vw;
+    height: 30vh;
+    background: url("/src/assets/images/bg-campionat.jpeg") center/cover no-repeat;
+    margin-left: 0;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    height: 30vh;
-    z-index: 2;
-    margin-left: 0;
     opacity: 0.3;
   }
 
   .text-on-image {
+    position: revert;
+    z-index: 3;
+    width: 90vw;
+    text-align: center;
+    margin: auto;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    width: 90vw;
-    position: revert;
-    margin: auto;
-    text-align: center;
-    z-index: 3;
 
     .campionat {
       grid-column: 1 / 2;
@@ -182,47 +207,51 @@
   }
 
   @media screen and (min-width: $tablet-min-width) {
+
     .bg-image {
-      grid-column: 1 / 9;
       height: 35vh;
+      grid-column: 1 / 9;
     }
 
     .text-on-image {
-      grid-column: 1 / 9;
       width: 70vw;
+      grid-column: 1 / 9;
     }
 
     .campionat {
-      grid-column: 2 / 8;
       width: 100%;
+      grid-column: 2 / 8;
+    }
+
+    // el text d"introducció al campionat es mostra com un grid
+    // amb dues columnes
+    .intro {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr;
     }
 
     .cartell {
       width: 70%;
     }
-
-    .intro {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: 1fr;
-      gap: 20px;
-    }
   }
 
   @media screen and (min-width: $pc-min-width) {
+
     .bg-image {
-      grid-column: 1 / 13;
       height: 60vh;
+      grid-column: 1 / 13;
     }
 
     .text-on-image {
-      grid-column: 1 / 13;
       width: 50vw;
+      grid-column: 1 / 13;
     }
 
     .campionat {
-      grid-column: 4 / 10;
       width: 90%;
+      grid-column: 4 / 10;
     }
 
     .cartell {

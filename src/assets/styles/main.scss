@@ -7,7 +7,7 @@
  * Import variables
  */
 
-@import 'variables';
+@import "variables";
 
 /**
  * Import npm dependencies
@@ -17,19 +17,19 @@
 
 // @import "some-node-module";
 // @import "@some-company/some-node-module";
-@import 'bootstrap/scss/bootstrap';
-@import 'npm:@fortawesome/fontawesome-free/css/all.css';
+@import "bootstrap/scss/bootstrap";
+@import "npm:@fortawesome/fontawesome-free/css/all.css";
 
 /**
  * Import layouts
- * It's a best practice to use a different partial for each page
+ * It"s a best practice to use a different partial for each page
  */
 
-@import 'layouts/base';
-@import 'layouts/home';
-@import 'layouts/chess-members';
-@import 'layouts/campionat';
-@import 'layouts/contacte';
+@import "layouts/base";
+@import "layouts/home";
+@import "layouts/chess-members";
+@import "layouts/campionat";
+@import "layouts/contacte";
 
 /**
  * Do NOT include anything else in this file!
