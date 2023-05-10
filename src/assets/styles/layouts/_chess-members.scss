@@ -1,11 +1,5 @@
 @import 'base';
 
-.titol-pagina {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
 .club-members {
   display: flex;
   flex-wrap: wrap;
@@ -65,30 +59,18 @@
 }
 
 @supports (display: grid) {
-  .titol-pagina {
-    grid-column: 1 / 2;
-    grid-row: 2;
-  }
-
   .club-members {
     grid-column: 1 / 2;
     grid-row: 3 / 4;
+    margin-bottom: 1rem;
   }
 
   .after-header {
     grid-column: 1 / 2;
     grid-row: 2;
-    height: 2px;
-    background-color: $primary-color;
-    margin-top: 0.5rem;
   }
 
   @media screen and (min-width: $tablet-min-width) {
-    .titol-pagina {
-      grid-column: 2 / 8;
-      grid-row: 2;
-    }
-
     .club-members {
       grid-column: 2 / 8;
     }
@@ -99,11 +81,6 @@
   }
 
   @media screen and (min-width: $pc-min-width) {
-    .titol-pagina {
-      grid-column: 4 / 10;
-      grid-row: 2;
-    }
-
     .club-members {
       grid-column: 4 / 10;
     }

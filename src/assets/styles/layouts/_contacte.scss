@@ -2,18 +2,22 @@
 
 .dades {
   margin: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   width: 90%;
 }
 
 .map {
   width: 100%;
-  height: 200px;
+  height: 300px;
   margin-bottom: 2rem;
 }
 
 .description-list {
   text-align: center;
+}
+
+.contacte {
+  margin-top: 2rem;
 }
 
 .input-text {
@@ -61,6 +65,11 @@
   .dades {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    margin-bottom: 1rem;
+  }
+
+  .map {
+    margin-bottom: 0;
   }
 
   .contacte {
@@ -70,9 +79,12 @@
   }
 
   @media screen and (min-width: $tablet-min-width) {
+    .hr-contacte {
+      display: none;
+    }
+
     .dades {
       grid-column: 2 / 8;
-      grid-row: 2 / 3;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: fit-content 1fr;
@@ -88,7 +100,8 @@
     .map {
       grid-column: 1 / 2;
       grid-row: 2;
-      width: 80%;
+      height: 230px;
+      width: 100%;
       margin: auto;
     }
 

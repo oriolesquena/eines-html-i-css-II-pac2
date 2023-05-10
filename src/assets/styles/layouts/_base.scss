@@ -5,6 +5,7 @@
 body {
   height: 100%;
   width: 90%;
+  max-width: $max-width;
   margin: 0 auto;
   font-family: $font-family-sans-serif;
   font-size: $font-size;
@@ -18,12 +19,34 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  z-index: 5;
+}
+
+.after-header {
+  height: 2px;
+  width: 100%;
+  background-color: $primary-color;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.titol-pagina {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.before-footer {
+  width: 100%;
+  background-color: $primary-color;
+  margin-top: 2rem;
+  height: 1px;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 5;
 
   .primary-nav {
     font-size: 0.7rem;
@@ -35,6 +58,7 @@ body {
   width: 130px;
   background: url(/src/assets/images/logo.png) 0/130px no-repeat;
   margin-left: -10px;
+  z-index: 5;
 }
 
 .nav-menu {
@@ -96,8 +120,6 @@ body {
   }
 }
 
-/*
-
 @supports (display: grid) {
   .body {
     width: revert;
@@ -117,11 +139,21 @@ body {
     margin-bottom: revert;
   }
 
+  .after-header {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-top: -0.2rem;
+  }
+
+  .titol-pagina {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-top: 3rem
+  }
+
   .before-footer {
     grid-column: 1 / 2;
     grid-row: 4;
-    height: 1px;
-    background-color: $primary-color;
     margin-top: 0;
   }
 
@@ -145,6 +177,15 @@ body {
       justify-content: space-between;
       margin-top: 10px;
       margin-bottom: -10px;
+    }
+
+    .after-header {
+      grid-column: 1 / 9;
+    }
+
+    .titol-pagina {
+      grid-column: 2 / 8;
+      grid-row: 2;
     }
 
     .before-footer {
@@ -175,6 +216,15 @@ body {
       margin-top: 0;
     }
 
+    .after-header {
+      grid-column: 1 / 13;
+    }
+
+    .titol-pagina {
+      grid-column: 4 / 10;
+      grid-row: 2;
+    }
+
     .before-footer {
       grid-column: 3 / -3;
     }
@@ -188,5 +238,3 @@ body {
     }
   }
 }
-
-*/

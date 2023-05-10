@@ -24,7 +24,6 @@
 
   <body class="body">
     <include src="./views/header.html"></include>
-    <hr class="after-header" />
     <div class="portada">
       <div class="frase-portada">
         <div class="frase-1"><p class="frase">Vine a jugar,</p></div>
@@ -41,9 +40,19 @@
       <div class="main-img"></div>
       <div class="secondary-img"></div>
     </div>
+    <div class="puzzle-div">
+      <h1 class="trencaclosques display-4">Resol el trencaclosques del dia!</h1>
+      <iframe
+        class="puzzle"
+        frameborder="0"
+        src="https://www.chess.com/daily_puzzle"
+        frameborder="0"
+      ></iframe>
+    </div>
     <hr class="before-footer" />
     <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script>
+    <script type="module" src="./assets/scripts/play.js"></script>
+    <script type="module" src="./assets/scripts/img.js"></script>
     <!-- do not remove this line! -->
   </body>
 </html>

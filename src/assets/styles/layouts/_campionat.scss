@@ -1,19 +1,7 @@
 @import 'base';
 
-.bg-image {
-  background: url(/src/assets/images/bg-campionat.jpeg) center/cover no-repeat;
-  height: 250px;
-  width: 100vw;
-  margin-left: -2rem;
-  opacity: 0.3;
-}
-
 .text-on-image {
-  width: 80vw;
   margin: auto;
-  margin-bottom: -110px;
-  position: relative;
-  top: -195px;
   text-align: center;
   z-index: 3;
 }
@@ -21,7 +9,6 @@
 .campionat {
   margin: 2rem auto;
   margin-bottom: 0;
-  width: 85%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -146,13 +133,37 @@
   }
 }
 
+@media screen and (min-width: $tablet-min-width) {
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+  }
+
+  .cartell {
+    width: 50%;
+  }
+}
+
 @supports (display: grid) {
+  .hr-campionat {
+    opacity: 0;
+  }
+
+  .campionat {
+    width: 90%;
+  }
+
   .bg-image {
+    background: url(/src/assets/images/bg-campionat.jpeg) center/cover no-repeat;
+    width: 100vw;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     height: 30vh;
     z-index: 2;
     margin-left: 0;
+    opacity: 0.3;
   }
 
   .text-on-image {
@@ -183,6 +194,7 @@
 
     .campionat {
       grid-column: 2 / 8;
+      width: 100%;
     }
 
     .cartell {
