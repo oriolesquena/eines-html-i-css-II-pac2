@@ -11,6 +11,7 @@
   filter: blur(8px);
   width: 200%;
   margin-left: -25vw;
+  opacity: 0;
 }
 
 .main-img {
@@ -101,11 +102,11 @@
     }
 
     .frase-portada {
-      grid-column: 2 / 3;
-      grid-row: 3 / 4;
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
       flex-direction: column;
       align-items: flex-start;
-      align-self: center;
+      align-self: flex-start;
       height: 25vh;
       gap: 1rem;
       font-size: 3rem;
@@ -113,7 +114,9 @@
       font-weight: bold;
       color: $secondary-dark;
       margin: revert;
-      margin-left: 2rem;
+      margin-top: 3rem;
+      margin-left: 4rem;
+      z-index: 4;
 
       .frase-1 {
         background-color: rgba(193, 255, 114, 0.7);
@@ -153,6 +156,7 @@
     .bg-img {
       grid-column: 1 / 5;
       grid-row: 1 / 4;
+      opacity: 0.7;
     }
 
     .border-img {
