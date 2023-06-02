@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="author" content="Oriol Esquena" />
-    <meta
-      name="description"
-      content="Lloc web creat com a exercici de la PAC2 de l'assignatura
-        Eines HTML i CSS II del màster Desenvolupament de Llocs i Aplicacions Web de la UOC. 
-        S'hi troba informació sobre el Club d'Escacs d'Olot (fictici)."
-    />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-    <link
-      rel="icon"
-      type="image/svg"
-      sizes="32x32"
-      href="./assets/images/chess-pawn-solid.svg"
-    />
-    <!-- do not remove this line! -->
-    <title>Club Escacs Olot</title>
-  </head>
 
-  <body class="body">
-    <include src="./views/header.html"></include>
-    <div class="portada">
-      <div class="frase-portada">
-        <div class="frase-1"><p class="frase">Vine a jugar,</p></div>
-        <div class="frase-2"><p class="frase">aprendre i</p></div>
-        <div class="frase-3"><p class="frase">gaudir al...</p></div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="author" content="Oriol Esquena" />
+  <meta name="description" content="Lloc web creat com a exercici de la PAC2 de l'assignatura
+        Eines HTML i CSS II del màster Desenvolupament de Llocs i Aplicacions Web de la UOC. 
+        S'hi troba informació sobre el Club d'Escacs d'Olot (fictici)." />
+  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+  <link rel="icon" type="image/svg" sizes="32x32" href="./assets/images/chess-pawn-solid.svg" />
+  <!-- do not remove this line! -->
+  <title>Club Escacs Olot</title>
+</head>
+
+<body class="body">
+  <include src="./views/header.html"></include>
+  <div class="portada">
+    <div class="frase-portada">
+      <div class="frase-1">
+        <p class="frase">Vine a jugar,</p>
       </div>
-      <div class="main-title">
-        <p>Club</p>
-        <p>Escacs</p>
-        <p>Olot</p>
+      <div class="frase-2">
+        <p class="frase">aprendre i</p>
       </div>
-      <div class="bg-img"></div>
-      <div class="border-img"></div>
-      <div class="main-img"></div>
-      <div class="secondary-img"></div>
+      <div class="frase-3">
+        <p class="frase">gaudir al...</p>
+      </div>
     </div>
-    <div class="puzzle">
-      <h1 class="puzzle--titol display-4"><i class="fa-solid fa-chess-board"></i> Resol el trencaclosques del dia!</h1>
-      <iframe
-        class="puzzle--frame"
-        frameborder="0"
-        src="https://www.chess.com/daily_puzzle"
-        frameborder="0"
-      ></iframe>
+    <div class="main-title">
+      <p>Club</p>
+      <p>Escacs</p>
+      <p>Olot</p>
     </div>
-    <hr class="before-footer" />
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/play.js"></script>
-    <script type="module" src="./assets/scripts/img.js"></script>
-    <!-- do not remove this line! -->
-  </body>
+    <div class="bg-img"></div>
+    <div class="border-img"></div>
+    <div class="main-img"></div>
+    <div class="secondary-img"></div>
+  </div>
+  <div class="puzzle">
+    <h1 class="puzzle--titol display-4"><i class="fa-solid fa-chess-board"></i> Resol el trencaclosques del dia!</h1>
+    <iframe class="puzzle--frame" frameborder="0" src="https://lichess.org/training/frame?theme=marble&bg=dark"
+      frameborder="0"></iframe>
+  </div>
+  <hr class="before-footer" />
+  <include src="./views/footer.html"></include>
+  <script type="module" src="./assets/scripts/play.js"></script>
+  <script type="module" src="./assets/scripts/img.js"></script>
+  <!-- do not remove this line! -->
+</body>
+
 </html>
